@@ -1,0 +1,252 @@
+import { Product, ClientStory, Industry, ProcessStep } from '../types';
+
+export const COMPANY_DETAILS = {
+  name: 'RISETECH Conveyor System and Belts Pvt. Ltd.',
+  brandName: 'RISETECH',
+  tagline: 'Moving your business FORWARD',
+  subTagline: 'Precision Engineered Conveying Systems',
+  established: 2021,
+  location: 'Bhiwandi, Maharashtra, India',
+  phone: '+91 9004450610',
+  phoneClean: '+919004450610',
+  whatsappUrl: 'https://wa.me/919004450610?text=Hello%20RISETECH,%20I%20would%20like%20to%20inquire%20about%20your%20conveyor%20systems.',
+  email: 'risetechconveyors@gmail.com',
+  address: 'AK-14, Rajlaxmi Complex, Kasheli, Kalher, Bhiwandi, Maharashtra 421 302, India',
+  gstin: '27AFNPP0254M1Z0',
+  cin: 'U25190MH2022PTC396065',
+};
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'belt-conveyor',
+    name: 'Belt Conveyor',
+    category: 'belt',
+    categoryLabel: 'Belt',
+    description: 'Continuous belt transport for cartons, parcels, packaged goods and general material handling.',
+    features: ['Green & PVC belts', 'Adjustable speed drives', 'Custom lengths & widths'],
+    svgKind: 'flat',
+    typicalApplications: 'Warehouses, distribution hubs, parcel sorting, light to medium production lines',
+    loadCapacity: 'Up to 150 kg/m',
+  },
+  {
+    id: 'loading-unloading',
+    name: 'Loading / Unloading Conveyor',
+    category: 'special',
+    categoryLabel: 'Special',
+    description: 'Inclined belts with cleated high-traction surface for truck loading, unloading and inter-floor transfer.',
+    features: ['Cleated heavy-duty belt', 'Stainless steel sides & guards', 'Reach trucks and container floors'],
+    svgKind: 'incline',
+    typicalApplications: 'Dock loading bays, container stuffing, van dispatch, mezzanines',
+    loadCapacity: 'Up to 250 kg/carton',
+  },
+  {
+    id: 'modular-belt',
+    name: 'Modular Belt Conveyor',
+    category: 'modular',
+    categoryLabel: 'Modular',
+    description: 'Plastic modular belt engineered for wet, sticky or heavy loads with easy washdown and maintenance.',
+    features: ['Plastic modular belt', 'Orange side safety guards', 'Food-friendly hygienic options'],
+    svgKind: 'modular',
+    typicalApplications: 'Food processing, bottling lines, washdown environments, bakeries',
+    loadCapacity: 'Up to 300 kg/m',
+  },
+  {
+    id: 'roller-conveyor',
+    name: 'Roller Conveyor',
+    category: 'roller',
+    categoryLabel: 'Roller',
+    description: 'Smooth low-friction roller transport for pallets, crates, totes and heavy industrial packages.',
+    features: ['Gravity or powered rollers', 'Curved & merge sections', 'Heavy-duty structural frames'],
+    svgKind: 'roller',
+    typicalApplications: 'Assembly workstations, pallet routing, end-of-line packaging, storage racking',
+    loadCapacity: 'Up to 1,200 kg/pallet',
+  },
+  {
+    id: 'modular-conveyor',
+    name: 'Modular Conveyor',
+    category: 'modular',
+    categoryLabel: 'Modular',
+    description: 'Interlocking plastic modules with positive sprocket drive for high-load and washdown operations.',
+    features: ['Interlocking plastic modules', 'Washdown ready CIP design', 'Long service life with zero slip'],
+    svgKind: 'chainmod',
+    typicalApplications: 'Beverage canning, automotive component conveyance, meat and poultry packing',
+    loadCapacity: 'Up to 450 kg/m',
+  },
+  {
+    id: 'curve-conveyor',
+    name: 'Curve Conveyor',
+    category: 'special',
+    categoryLabel: 'Special',
+    description: 'Smooth curved sections (45°, 90°, 180°) that route product around corners without interrupting line flow.',
+    features: ['Tight radius engineering', 'Motor-driven curves', 'Compact layout optimization'],
+    svgKind: 'curve',
+    typicalApplications: 'Space-constrained facilities, directional change lines, sorting loops',
+    loadCapacity: 'Up to 120 kg/m',
+  },
+  {
+    id: 'flat-belt-conveyor',
+    name: 'Flat Belt Conveyor',
+    category: 'belt',
+    categoryLabel: 'Belt',
+    description: 'Long, flat continuous belt lines with precision gear motor drive for steady, level horizontal transport.',
+    features: ['Precision gear motor drive', 'Wide belt custom options', 'Seamless floor & machine integration'],
+    svgKind: 'long',
+    typicalApplications: 'Inspection belts, manual assembly conveyors, inter-machine transfer, packaging lines',
+    loadCapacity: 'Up to 200 kg/m',
+  },
+];
+
+export const CLIENT_STORIES: ClientStory[] = [
+  {
+    id: 'nilkamal',
+    name: 'Nilkamal',
+    sector: 'Furniture & Plastics',
+    description: 'Conveyor lines supplied for material handling, moulded crate transfers, and continuous production flow.',
+    logoUrl: '/clients/nilkamal.png',
+    projectHighlights: 'Multi-tiered conveyor automation for injection moulding and crate packaging facility.',
+  },
+  {
+    id: 'hamilton',
+    name: 'Hamilton',
+    sector: 'Manufacturing',
+    description: 'Belt conveyor systems delivered for plant material movement, component lines, and final packaging.',
+    logoUrl: '/clients/hamilton.png',
+    projectHighlights: 'Continuous assembly lines with speed control for precision manufacturing runs.',
+  },
+  {
+    id: 'jubilant-foodworks',
+    name: 'Jubilant FoodWorks',
+    sector: 'Food Processing',
+    description: 'Hygienic food-grade conveyor solutions engineered for food processing, commissary prep, and washdown compliance.',
+    logoUrl: '/clients/jubilant_foodworks.png',
+    projectHighlights: 'Sanitary modular belt lines meeting strict FSSAI food-grade hygiene standards.',
+  },
+  {
+    id: 'ceat',
+    name: 'CEAT',
+    sector: 'Tyres & Rubber',
+    description: 'Heavy-duty conveyor systems engineered for robust tyre production, tread handling, and vulcanizing bay lines.',
+    logoUrl: '/clients/ceat.png',
+    projectHighlights: 'High-load rubber transfer conveyors with heat-resistant vulcanized belts.',
+  },
+  {
+    id: 'advance-power',
+    name: 'Advance Power',
+    sector: 'Power & Energy',
+    description: 'Material handling conveyors for heavy equipment assembly, industrial operations, and panel transport.',
+    logoUrl: '/clients/advance_power.png',
+    projectHighlights: 'Custom structural steel conveyor chassis built for vibration damping and heavy loads.',
+  },
+  {
+    id: 'dkt-tyres',
+    name: 'DKT Tyres',
+    sector: 'Tyres & Rubber',
+    description: 'Conveyor lines supplied for tyre plant raw material handling, green tyre transfer, and inspection docks.',
+    logoUrl: '/clients/dkt_tyres.png',
+    projectHighlights: 'Non-marking polyurethane rollers and robust drive units designed for 24/7 duty.',
+  },
+];
+
+export const INDUSTRIES: Industry[] = [
+  {
+    id: 'warehouse',
+    name: 'Warehouse & Logistics',
+    icon: '🏭',
+    description: 'High-throughput parcel sorting, truck loading booms, cross-docking, and distribution hub automation.',
+    typicalConveyors: 'Belt & Telescopic loading conveyors',
+  },
+  {
+    id: 'ecommerce',
+    name: 'E-commerce',
+    icon: '🛒',
+    description: 'Rapid order fulfillment loops, pick-to-belt stations, and automated pack-out dispatch conveyor lines.',
+    typicalConveyors: 'Flat belt & Curve conveyors',
+  },
+  {
+    id: 'automotive',
+    name: 'Automotive',
+    icon: '🚗',
+    description: 'Rugged component assembly conveyors, tyre and sub-assembly transfers, and robotic workcell feeding.',
+    typicalConveyors: 'Powered roller & Heavy modular belts',
+  },
+  {
+    id: 'food-beverage',
+    name: 'Food & Beverage',
+    icon: '🍴',
+    description: 'Sanitary washdown modular conveyors, bottling loops, baking cooling tunnels, and hygienic transfers.',
+    typicalConveyors: 'Food-grade modular & Washdown belts',
+  },
+  {
+    id: 'retail',
+    name: 'Retail & FMCG',
+    icon: '🛍️',
+    description: 'Crate and carton routing, secondary packaging transport, shrink-wrap infeeds, and palletizers.',
+    typicalConveyors: 'Gravity roller & Modular conveyors',
+  },
+  {
+    id: 'pharma',
+    name: 'Pharmaceutical',
+    icon: '💊',
+    description: 'Cleanroom-compatible stainless steel conveyors, blister pack transfer, vial handling, and labelling lines.',
+    typicalConveyors: 'Precision miniature belt & SS Modular',
+  },
+  {
+    id: 'manufacturing',
+    name: 'Manufacturing',
+    icon: '⚙️',
+    description: 'Continuous shopfloor parts transfer, inter-machine conveyors, cooling lines, and finished goods routing.',
+    typicalConveyors: 'Flat belt, Roller & Incline conveyors',
+  },
+];
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    number: '01',
+    title: 'Site Survey',
+    description: 'We study your layout, material, volumes and bottlenecks on the floor.',
+    detail: 'Our engineering specialists visit your plant in person or analyze floor plan CAD models to measure clear spans, floor loads, electrical feeds, and ambient conditions.',
+  },
+  {
+    number: '02',
+    title: 'Engineering Design',
+    description: 'Load, speed and drive calculations, with layout drawings for approval.',
+    detail: 'We calculate exact torque ratings, motor power, belt elongation tolerances, and safety factors, delivering full 3D layout drawings and electrical schematics.',
+  },
+  {
+    number: '03',
+    title: 'Fabrication & Testing',
+    description: 'Laser-cut frames, precision-machined rollers and run-in testing before dispatch.',
+    detail: 'All frames are CNC laser cut, press-brake formed, and powder-coated or stainless finished in our Bhiwandi workshop, followed by a rigorous 8-hour factory load test.',
+  },
+  {
+    number: '04',
+    title: 'Install & Support',
+    description: 'On-site installation, commissioning, team training and responsive spares support.',
+    detail: 'Our experienced installation crew aligns, levels, anchors, and wires the system on your schedule to minimize plant downtime, backed by 24/7 technical assistance.',
+  },
+];
+
+export const COUNTERS = [
+  { label: 'Established', value: 'Est. 2021', sub: 'Pvt. Ltd. registered in Bhiwandi' },
+  { label: 'Conveyor Families', value: '7', numeric: 7, suffix: '', sub: 'Standard engineered families' },
+  { label: 'Success Stories', value: '6', numeric: 6, suffix: '', sub: 'Leading enterprise brands' },
+  { label: 'Custom-Engineered', value: '100%', numeric: 100, suffix: '%', sub: 'Tailored to your exact floor plan' },
+];
+
+export const WHY_US = [
+  {
+    title: 'Precision Engineering',
+    description: 'Every conveyor is sized to your load, speed and floor plan rather than an off-the-shelf catalogue compromise.',
+    badge: 'Custom Sized',
+  },
+  {
+    title: 'Reliable Performance',
+    description: 'Robust frames, quality high-efficiency drives and belts chosen specifically for continuous 24/7 multi-shift operations.',
+    badge: 'Heavy Duty',
+  },
+  {
+    title: 'Built to Last',
+    description: 'Durable structural construction, easily accessible lubrication points, and responsive spares support keep your lines running for years.',
+    badge: 'Zero Downtime',
+  },
+];

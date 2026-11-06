@@ -1,0 +1,6 @@
+{
+  "name": "RISETECH Conveyor System & Belts",
+  "description": "Precision engineered conveyor systems and belts for warehouses, logistics, e-commerce, automotive, food, pharma, and manufacturing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
