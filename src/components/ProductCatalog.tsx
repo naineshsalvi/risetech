@@ -41,9 +41,10 @@ export const ProductCatalog: React.FC<Props> = ({ onOpenQuoteModal }) => {
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-2 p-1.5 rounded-full bg-[#f4f7fb] border border-[#dfe6f1] w-fit mt-10 shadow-sm">
-          {filterTabs.map((tab) => {
+        {/* Filter Tabs & Gallery Jump Action */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-10">
+          <div className="flex flex-wrap gap-2 p-1.5 rounded-full bg-[#f4f7fb] border border-[#dfe6f1] w-fit shadow-sm">
+            {filterTabs.map((tab) => {
             const count =
               tab.value === 'all'
                 ? PRODUCTS.length
@@ -71,6 +72,15 @@ export const ProductCatalog: React.FC<Props> = ({ onOpenQuoteModal }) => {
               </button>
             );
           })}
+          </div>
+
+          <a
+            href="#gallery"
+            className="btn-sheen inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ffc20e] text-[#071f4d] font-black text-xs sm:text-sm shadow-md hover:bg-[#ffd84d] transition-all w-fit"
+          >
+            <span>📸 View Real Photo Gallery (6 Photos)</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
 
         {/* Products Grid */}

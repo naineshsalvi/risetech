@@ -34,6 +34,27 @@ export interface GalleryItem {
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
+    id: 'truck-bed-loader-01',
+    title: 'Hydraulic Mobile Truck Bed Loading & Unloading Conveyor',
+    category: 'Truck & Container Loading',
+    image: '/assets/aistudio/image_1f6cc9ed.png',
+    tag: 'RT-TRUCK-BED',
+    description: 'High-throughput mobile truck bed conveyor loading and unloading brown cartons directly from logistics delivery trucks. Equipped with hydraulic scissor elevation arms, independent geared motor drive, push-button safety control console, and lockable caster outriggers.',
+    specs: {
+      beltType: 'High-Traction Diamond Green PVC Cleated Belt',
+      frameMaterial: 'Heavy Structural Steel (Blue & Safety Yellow)',
+      loadCapacity: '3,200+ cartons/hour (up to 60 kg/carton)',
+      inclineOrLength: 'Hydraulic scissor lift with micro-height lock',
+      suitableFor: 'Logistics fleets, truck loading/unloading, FMCG carton transit, warehouse sorting',
+    },
+    features: [
+      'Direct truck bed docking eliminates manual lifting and reduces turn-around by 65%',
+      'Integrated hydraulic lift adjusts smoothly to any truck bed or loading bay height',
+      'Dual-direction forward/reverse belt motion for rapid loading and unloading',
+      '4x industrial heavy-duty casters with dual screw jack outrigger floor locks'
+    ]
+  },
+  {
     id: 'flat-belt-01',
     title: 'Industrial Horizontal Flat Belt Conveyor',
     category: 'Flat Belt',
@@ -119,10 +140,10 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'container-loader-01',
-    title: 'Hydraulic Mobile Container & Truck Loading System',
+    title: 'Telescopic Shipping Container Stuffing & Destuffing System',
     category: 'Truck & Container Loading',
     image: '/assets/aistudio/image_b60fd612.png',
-    tag: 'RT-LOADER-40',
+    tag: 'RT-CONTAINER-40',
     description: 'Heavy-duty hydraulic mobile container loading and trailer unloading system docked directly into shipping containers. Accelerates turnaround times by over 65% with single-operator controls.',
     specs: {
       beltType: 'High-Traction Diamond Grip Heavy Rubber / PVC',
@@ -148,7 +169,7 @@ export const ImageGallery: React.FC<Props> = ({ onOpenQuoteModal }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalIndex, setActiveModalIndex] = useState<number | null>(null);
 
-  const categories = ['All', 'Flat Belt', 'Incline & Cleated', 'Modular Aluminum', 'Truck & Container Loading'];
+  const categories = ['All', 'Truck & Container Loading', 'Flat Belt', 'Incline & Cleated', 'Modular Aluminum'];
 
   const filteredItems = selectedCategory === 'All' 
     ? GALLERY_ITEMS 
@@ -198,7 +219,7 @@ export const ImageGallery: React.FC<Props> = ({ onOpenQuoteModal }) => {
   };
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#f4f7fb] relative overflow-hidden">
+    <section id="gallery" className="scroll-mt-24 py-20 sm:py-28 bg-[#f4f7fb] relative overflow-hidden">
       {/* Background ambient accents */}
       <div 
         className="absolute top-1/4 -left-32 w-96 h-96 rounded-full pointer-events-none opacity-40 blur-3xl"
@@ -231,18 +252,23 @@ export const ImageGallery: React.FC<Props> = ({ onOpenQuoteModal }) => {
           <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#dfe6f1] shadow-[0_4px_16px_rgba(12,47,110,0.06)] gap-1 flex-nowrap">
             {categories.map((cat) => {
               const active = selectedCategory === cat;
+              const count = cat === 'All' 
+                ? GALLERY_ITEMS.length 
+                : GALLERY_ITEMS.filter(i => i.category === cat).length;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                  className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
                     active
                       ? 'bg-[#0c2f6e] text-white shadow-md shadow-[#0c2f6e]/25'
                       : 'text-slate-600 hover:text-[#0c2f6e] hover:bg-slate-100'
                   }`}
                 >
-                  {cat === 'All' ? 'All Systems' : cat}
-                  {cat === 'All' && <span className="ml-1.5 text-[0.7rem] opacity-75">({GALLERY_ITEMS.length})</span>}
+                  <span>{cat === 'All' ? 'All Equipment' : cat}</span>
+                  <span className={`text-[0.7rem] px-1.5 py-0.2 rounded-full ${active ? 'bg-[#ffc20e] text-[#071f4d] font-black' : 'bg-slate-200 text-slate-700'}`}>
+                    {count}
+                  </span>
                 </button>
               );
             })}

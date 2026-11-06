@@ -83,7 +83,14 @@ export const Navbar: React.FC<Props> = ({ onOpenQuoteModal }) => {
                 href={link.href}
                 className="relative py-1 whitespace-nowrap transition-colors hover:text-[#1d5fd6] group"
               >
-                {link.label}
+                <span className="flex items-center gap-1">
+                  <span>{link.label}</span>
+                  {link.label === 'Gallery' && (
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-[#ffc20e] text-[#071f4d] px-1.5 py-0.5 rounded-full shadow-2xs">
+                      Photos
+                    </span>
+                  )}
+                </span>
                 <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ffc20e] rounded-full transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
@@ -141,7 +148,14 @@ export const Navbar: React.FC<Props> = ({ onOpenQuoteModal }) => {
                   onClick={handleLinkClick}
                   className="py-3 font-semibold text-[#0c2f6e] hover:text-[#1d5fd6] transition-colors flex items-center justify-between"
                 >
-                  <span>{link.label}</span>
+                  <span className="flex items-center gap-2">
+                    <span>{link.label}</span>
+                    {link.label === 'Gallery' && (
+                      <span className="text-[10px] font-black uppercase tracking-wider bg-[#ffc20e] text-[#071f4d] px-2 py-0.5 rounded-full">
+                        6 Photos
+                      </span>
+                    )}
+                  </span>
                   <span className="text-slate-300">›</span>
                 </a>
               ))}
