@@ -7,6 +7,8 @@ interface Props {
   onOpenQuoteModal: () => void;
 }
 
+
+
 export const Hero3DConveyor: React.FC<Props> = ({ onOpenQuoteModal }) => {
   const stageRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -195,57 +197,52 @@ export const Hero3DConveyor: React.FC<Props> = ({ onOpenQuoteModal }) => {
                       </div>
                       <div className="gate-beam-3d" />
 
-                      {/* 3D Moving Cartons with realistic industrial delivery labels */}
+                      {/* 3D Moving Cartons - Clean Plain 3D Corrugated Boxes */}
                       {/* Carton 1 */}
                       <div className="ride-3d">
+                        <div className="cube-shadow-3d" />
                         <div className="cube-3d">
-                          <div className="face-3d front flex items-center justify-center">
-                            <span className="text-[7px] font-black tracking-widest text-[#0c2f6e] opacity-80">▲▲</span>
-                          </div>
-                          <div className="face-3d back" />
-                          <div className="face-3d right flex items-center justify-center">
-                            <span className="text-[6px] font-mono font-bold text-amber-900/70">|||||||||</span>
-                          </div>
-                          <div className="face-3d left" />
-                          <div className="face-3d top relative">
-                            <div className="face-3d tape absolute inset-0" />
-                          </div>
                           <div className="face-3d bottom" />
+                          <div className="face-3d back" />
+                          <div className="face-3d left" />
+                          <div className="face-3d right" />
+                          <div className="face-3d front" />
+                          <div className="face-3d top">
+                            <div className="face-3d tape absolute inset-0 pointer-events-none" />
+                            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-amber-950/30 pointer-events-none" />
+                          </div>
                         </div>
                       </div>
 
                       {/* Carton 2 */}
                       <div className="ride-3d d2">
+                        <div className="cube-shadow-3d" />
                         <div className="cube-3d">
-                          <div className="face-3d front flex flex-col items-center justify-center">
-                            <span className="px-1 py-0.5 bg-[#ffc20e] text-[#071f4d] font-black text-[6px] rounded-xs shadow-xs">FRAGILE</span>
-                          </div>
-                          <div className="face-3d back" />
-                          <div className="face-3d right" />
-                          <div className="face-3d left" />
-                          <div className="face-3d top relative">
-                            <div className="face-3d label" />
-                          </div>
                           <div className="face-3d bottom" />
+                          <div className="face-3d back" />
+                          <div className="face-3d left" />
+                          <div className="face-3d right" />
+                          <div className="face-3d front" />
+                          <div className="face-3d top">
+                            <div className="face-3d tape absolute inset-0 pointer-events-none" />
+                            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-amber-950/30 pointer-events-none" />
+                          </div>
                         </div>
                       </div>
 
                       {/* Carton 3 */}
                       <div className="ride-3d d3">
+                        <div className="cube-shadow-3d" />
                         <div className="cube-3d">
-                          <div className="face-3d front flex flex-col items-center justify-center">
-                            <span className="text-[7px] font-black text-[#0c2f6e]">RISETECH</span>
-                            <span className="text-[5px] font-mono text-amber-950/70">EXP-9004</span>
-                          </div>
-                          <div className="face-3d back" />
-                          <div className="face-3d right flex items-center justify-center">
-                            <span className="text-[6px] font-mono font-bold text-amber-900/70">|||||||||</span>
-                          </div>
-                          <div className="face-3d left" />
-                          <div className="face-3d top relative">
-                            <div className="face-3d tape absolute inset-0" />
-                          </div>
                           <div className="face-3d bottom" />
+                          <div className="face-3d back" />
+                          <div className="face-3d left" />
+                          <div className="face-3d right" />
+                          <div className="face-3d front" />
+                          <div className="face-3d top">
+                            <div className="face-3d tape absolute inset-0 pointer-events-none" />
+                            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-amber-950/30 pointer-events-none" />
+                          </div>
                         </div>
                       </div>
                     </div>

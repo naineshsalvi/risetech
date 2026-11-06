@@ -118,8 +118,8 @@ body {
 }
 
 @keyframes ride {
-  0% { transform: translate3d(-40px, 22px, 0); }
-  100% { transform: translate3d(420px, 22px, 0); }
+  0% { transform: translate3d(6px, 22px, 0); }
+  100% { transform: translate3d(376px, 22px, 0); }
 }
 
 @keyframes gleam {
@@ -151,41 +151,51 @@ body {
 /* 3D Conveyor Scene Utilities - Responsive & High-Fidelity Industrial Finish */
 .stage-3d {
   position: relative;
-  height: 480px;
-  perspective: 1300px;
-  perspective-origin: 50% 40%;
+  height: 460px;
+  perspective: 1200px;
+  perspective-origin: 50% 38%;
 }
 @media (max-width: 1024px) {
-  .stage-3d { height: 420px; }
+  .stage-3d {
+    height: 390px;
+    perspective: 1000px;
+  }
 }
 @media (max-width: 640px) {
   .stage-3d {
-    height: 380px;
-    perspective: 1100px;
-    perspective-origin: 50% 42%;
+    height: 310px;
+    perspective: 850px;
+    perspective-origin: 50% 38%;
   }
 }
 
 .scene-3d {
   position: absolute;
   left: 50%;
-  top: 52%;
+  top: 50%;
   width: 560px;
   height: 260px;
   margin: -130px 0 0 -280px;
   transform-style: preserve-3d;
-  transform: rotateX(calc(54deg + var(--ty, 0deg))) rotateZ(calc(-28deg + var(--tx, 0deg))) scale(1.15);
+  transform: rotateX(calc(52deg + var(--ty, 0deg))) rotateZ(calc(-20deg + var(--tx, 0deg))) scale(1.04);
   transition: transform 0.4s ease-out;
 }
 @media (max-width: 1024px) {
   .scene-3d {
-    transform: rotateX(55deg) rotateZ(-27deg) scale(0.95);
+    transform: rotateX(50deg) rotateZ(-18deg) scale(0.84);
   }
 }
 @media (max-width: 640px) {
   .scene-3d {
-    top: 50%;
-    transform: rotateX(52deg) rotateZ(-22deg) scale(0.82);
+    top: 48%;
+    /* Perfectly centered and scaled so neither left nor right end ever clips */
+    transform: translateX(8px) rotateX(46deg) rotateZ(-13deg) scale(0.56);
+  }
+}
+@media (max-width: 380px) {
+  .scene-3d {
+    top: 48%;
+    transform: translateX(6px) rotateX(46deg) rotateZ(-12deg) scale(0.50);
   }
 }
 
@@ -304,8 +314,8 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   transform-style: preserve-3d;
   animation: ride 9s linear infinite;
 }
@@ -316,67 +326,88 @@ body {
   animation-delay: -6s;
 }
 
+/* Contact drop shadow on belt surface directly underneath each carton */
+.cube-shadow-3d {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 58px;
+  height: 58px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 50%, transparent 72%);
+  transform: translateZ(1px);
+  pointer-events: none;
+}
+
+/* 3D Corrugated Cardboard Cube */
 .cube-3d {
   position: absolute;
   left: 0;
   top: 0;
-  width: 54px;
-  height: 54px;
+  width: 62px;
+  height: 62px;
   transform-style: preserve-3d;
-  transform: translateZ(15px);
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+  transform: translateZ(31px);
 }
 
+/* 3D Faces - backface-visibility hidden so internal faces never bleed */
 .face-3d {
   position: absolute;
   left: 0;
   top: 0;
-  width: 54px;
-  height: 54px;
-  border: 1px solid rgba(138, 86, 26, 0.6);
-  background: linear-gradient(155deg, #eed2a4 0%, #d8a562 60%, #b87e38 100%);
-  backface-visibility: visible;
+  width: 62px;
+  height: 62px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
-.face-3d.front {
-  transform: translateZ(27px);
-}
-.face-3d.back {
-  transform: rotateY(180deg) translateZ(27px);
-}
-.face-3d.right {
-  transform: rotateY(90deg) translateZ(27px);
-  background: linear-gradient(155deg, #d39c57 0%, #aa7434 100%);
-}
-.face-3d.left {
-  transform: rotateY(-90deg) translateZ(27px);
-  background: linear-gradient(155deg, #d39c57 0%, #aa7434 100%);
-}
+
+/* TOP FACE: Directly facing overhead camera in isometric projection (Normal: +Z) */
 .face-3d.top {
-  transform: rotateX(90deg) translateZ(27px);
-  background: linear-gradient(155deg, #fce4b8 0%, #e2b376 100%);
+  transform: rotateZ(0deg) translateZ(31px);
+  background: linear-gradient(135deg, #fce4c2 0%, #edd1a7 50%, #deb584 100%);
+  border: 1px solid #c99a61;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.75), inset -1px -1px 0 rgba(140, 85, 30, 0.3);
 }
+
+/* FRONT FACE: Facing forward towards front conveyor rail and viewer (Normal: +Y) */
+.face-3d.front {
+  transform: rotateX(-90deg) translateZ(31px);
+  background: linear-gradient(175deg, #dca76e 0%, #c48b4f 50%, #a87135 100%);
+  border: 1px solid #945d24;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* RIGHT FACE: Facing right towards discharge roller in realistic shadow (Normal: +X) */
+.face-3d.right {
+  transform: rotateY(90deg) translateZ(31px);
+  background: linear-gradient(175deg, #7c491a 0%, #5d3410 60%, #442407 100%);
+  border: 1px solid #3c1e05;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* BACK FACE: Facing rear rail (Normal: -Y) */
+.face-3d.back {
+  transform: rotateX(90deg) translateZ(31px);
+  background: #5a320d;
+}
+
+/* LEFT FACE: Facing entry roller (Normal: -X) */
+.face-3d.left {
+  transform: rotateY(-90deg) translateZ(31px);
+  background: #6a3d13;
+}
+
+/* BOTTOM FACE: Resting flat on moving belt (Normal: -Z) */
 .face-3d.bottom {
-  transform: rotateX(-90deg) translateZ(27px);
+  transform: rotateX(180deg) translateZ(31px);
+  background: #2b1706;
 }
+
+/* Realistic clear reinforced packing tape */
 .face-3d.tape {
-  background: linear-gradient(90deg, transparent 40%, rgba(255, 255, 255, 0.7) 40% 60%, transparent 60%);
-}
-.face-3d.label {
-  background: linear-gradient(155deg, #eed2a4 0%, #d8a562 60%, #b87e38 100%);
-}
-.face-3d.label::after {
-  content: "RISETECH";
-  position: absolute;
-  left: 6px;
-  top: 8px;
-  padding: 1px 4px;
-  font-size: 7px;
-  font-weight: 900;
-  color: #0c2f6e;
-  background: #ffffff;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, transparent 38%, rgba(255, 255, 255, 0.85) 38% 62%, transparent 62%);
+  border-left: 1px dashed rgba(100, 50, 10, 0.4);
+  border-right: 1px dashed rgba(100, 50, 10, 0.4);
 }
 
 .shadow-3d {

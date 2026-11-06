@@ -9,6 +9,7 @@ import { Hero3DConveyor } from './components/Hero3DConveyor';
 import { Marquee } from './components/Marquee';
 import { SuccessStories } from './components/SuccessStories';
 import { ProductCatalog } from './components/ProductCatalog';
+import { ImageGallery } from './components/ImageGallery';
 import { IndustriesSection } from './components/IndustriesSection';
 import { SavingsCalculator } from './components/SavingsCalculator';
 import { ProcessSection } from './components/ProcessSection';
@@ -49,6 +50,9 @@ export default function App() {
 
         {/* Product Catalog with Interactive Filters & SVG diagrams */}
         <ProductCatalog onOpenQuoteModal={handleOpenQuoteModal} />
+
+        {/* Real Production Equipment Image Gallery with Animated Thumbnails & Lightbox */}
+        <ImageGallery onOpenQuoteModal={handleOpenQuoteModal} />
 
         {/* Industries Served */}
         <IndustriesSection />

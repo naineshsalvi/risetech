@@ -20,6 +20,7 @@ export const Navbar: React.FC<Props> = ({ onOpenQuoteModal }) => {
 
   const navLinks = [
     { label: 'Products', href: '#products' },
+    { label: 'Gallery', href: '#gallery' },
     { label: 'Success Stories', href: '#clients' },
     { label: 'Industries', href: '#industries' },
     { label: 'Savings', href: '#savings' },

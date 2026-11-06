@@ -52,6 +52,7 @@ export const Footer: React.FC = () => {
               </strong>
               <div className="flex flex-col space-y-1.5 text-slate-300">
                 <a href="#products" className="hover:text-white transition-colors">Belt Conveyors</a>
+                <a href="#gallery" className="hover:text-[#ffd84d] transition-colors font-semibold">Equipment Gallery</a>
                 <a href="#products" className="hover:text-white transition-colors">Loading / Unloading Inclines</a>
                 <a href="#products" className="hover:text-white transition-colors">Modular Plastic Belts</a>
                 <a href="#products" className="hover:text-white transition-colors">Heavy-Duty Roller Conveyors</a>
